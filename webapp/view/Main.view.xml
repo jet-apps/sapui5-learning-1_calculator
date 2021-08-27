@@ -1,0 +1,79 @@
+<mvc:View
+	controllerName="sap.ui5.learning.calculator.sapui5learning1calculator.controller.Main"
+	xmlns:core="sap.ui.core"
+	xmlns:mvc="sap.ui.core.mvc"
+	displayBlock="true"
+	xmlns="sap.m"
+>
+	<Shell id="shell">
+		<App id="app">
+			<pages>
+				<Page
+					id="page"
+					title="{i18n>title}"
+					class="sapUiContentPadding"
+				>
+					<content>
+						<HBox>
+							<VBox width="20%">
+								<VBox>
+									<Label
+										text="{i18n>mainView.lbValueA}"
+										labelFor="inValueA"
+									/>
+									<Input
+										id="inValueA"
+										required="true"
+										placeholder="{i18n>mainView.inValueA.Hint}"
+									/>
+								</VBox>
+								<VBox class="sapUiMediumMarginTop">
+									<Label
+										text="{i18n>mainView.lbValueB}"
+										labelFor="inValueB"
+									/>
+									<Input
+										id="inValueB"
+										required="true"
+										placeholder="{i18n>mainView.inValueB.Hint}"
+									/>
+								</VBox>
+								<HBox
+									class="sapUiSmallMarginTop"
+									alignItems="End"
+								>
+									<VBox>
+										<Label
+											text="{i18n>mainView.lbMathOperations}"
+											labelFor="cbMathOperations"
+										/>
+										<ComboBox
+											id="cbMathOperations"
+											items="{path: '/operations'}"
+										>
+											<core:Item
+												key="{key}"
+												text="{text}"
+											/>
+										</ComboBox>
+									</VBox>
+									<Button
+										class="sapUiSmallMarginLeft"
+										text="{i18n>mainView.btnCalc}"
+										type="Emphasized"
+									/>
+								</HBox>
+							</VBox>
+							<VBox
+								width="80%"
+								alignItems="Center"
+							>
+								<Text text="{i18n>mainView.txResult}"/>
+							</VBox>
+						</HBox>
+					</content>
+				</Page>
+			</pages>
+		</App>
+	</Shell>
+</mvc:View>
